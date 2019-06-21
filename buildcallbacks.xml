@@ -7,78 +7,78 @@
  Build/Documentation
  
 	 before/after ant macro "clean"
-		 <macrodef name="dafontedtocache_before_clean"/>
-		 <macrodef name="dafontedtocache_after_clean"/>
+		 <macrodef name="customdtocache_before_clean"/>
+		 <macrodef name="customdtocache_after_clean"/>
 	 
 	 before/after ant macro "build"
-		 <macrodef name="dafontedtocache_before_build"/>
-		 <macrodef name="dafontedtocache_after_build"/>
+		 <macrodef name="customdtocache_before_build"/>
+		 <macrodef name="customdtocache_after_build"/>
 		 
 	 before/after ant macro "compile_core" - the core module of the extension
-		 <macrodef name="dafontedtocache_before_compile_core">
-		 <macrodef name="dafontedtocache_after_compile_core">
+		 <macrodef name="customdtocache_before_compile_core">
+		 <macrodef name="customdtocache_after_compile_core">
 	 
 	 before/after ant macro "compile_web" - the web module of the extension
-		 <macrodef name="dafontedtocache_before_compile_web" />
-		 <macrodef name="dafontedtocache_after_compile_web" />
+		 <macrodef name="customdtocache_before_compile_web" />
+		 <macrodef name="customdtocache_after_compile_web" />
 	 
 	 before/after ant macro "compile_hmc" - the hmc module of the extension
-		 <macrodef name="dafontedtocache_before_compile_hmc" />
-		 <macrodef name="dafontedtocache_after_compile_hmc" />
+		 <macrodef name="customdtocache_before_compile_hmc" />
+		 <macrodef name="customdtocache_after_compile_hmc" />
  
  Preparing extension
  
 	 will be called in the beginning of the ant call and only once (also when using multiple 
 	 ant targets e.g. ant build yunittest)	
-		 <macrodef name="dafontedtocache_only_once_prepare"/>
+		 <macrodef name="customdtocache_only_once_prepare"/>
  
  Creating ear module/production
  
 	 before/after ant macro "ear"
-		 <macrodef name="dafontedtocache_before_ear"/>
-		 <macrodef name="dafontedtocache_after_ear"/>
+		 <macrodef name="customdtocache_before_ear"/>
+		 <macrodef name="customdtocache_after_ear"/>
 
 	 before/after ant macro "production" - for hybris server only
-		 <macrodef name="dafontedtocache_before_production" />
-		 <macrodef name="dafontedtocache_after_production" />
+		 <macrodef name="customdtocache_before_production" />
+		 <macrodef name="customdtocache_after_production" />
  
  JUnit Test
  
 	 before/after ant macro "yunitinit" 
-		 <macrodef name="dafontedtocache_before_yunitinit" />
-		 <macrodef name="dafontedtocache_after_yunitinit" />
+		 <macrodef name="customdtocache_before_yunitinit" />
+		 <macrodef name="customdtocache_after_yunitinit" />
 	 
 	 before/after ant macro "yunit"
-		 <macrodef name="dafontedtocache_before_yunit" />
-		 <macrodef name="dafontedtocache_after_yunit" /> 
+		 <macrodef name="customdtocache_before_yunit" />
+		 <macrodef name="customdtocache_after_yunit" /> 
 		 
  Distribution package
  
  	 before/after ant macro "dist" - internal target; only for use when platform is available in source code
-		 <macrodef name="dafontedtocache_after_dist"/>
-		 <macrodef name="dafontedtocache_before_dist"/>
+		 <macrodef name="customdtocache_after_dist"/>
+		 <macrodef name="customdtocache_before_dist"/>
 	 
 	 before/after ant macro "dist_copy" - internal target; only for use when platform is available in source code
-		 <macrodef name="dafontedtocache_before_dist_copy"/>
-		 <macrodef name="dafontedtocache_after_dist_copy"/>
+		 <macrodef name="customdtocache_before_dist_copy"/>
+		 <macrodef name="customdtocache_after_dist_copy"/>
 		  
  	 With these filters you can override the default extension filters defined in platform/resources/ant/dist/filtersets.xml
- 	  	 <patternset id="extension.dafontedtocache.binary.filter">
+ 	  	 <patternset id="extension.customdtocache.binary.filter">
  	  	  	 <patternset refid="extension.filter" />
  	  	  	 <exclude name="**/*-source.jar" />
  	  	 </patternset>
- 	  	 <patternset id="extension.dafontedtocache.source.filter">
+ 	  	 <patternset id="extension.customdtocache.source.filter">
  	  	  	 <exclude name="**/bin/**" />
  	  	 </patternset>
      With this filter you can decide what should be excluded from development zip.
- 	  	 <patternset id="extension.dafontedtocache.devzip.filter">
+ 	  	 <patternset id="extension.customdtocache.devzip.filter">
  	  	 Include all files from extension.source.filter.
  	  	     <patternset refid="extension.source.filter" />
          Exclude unwanted files.
  	  	  	 <exclude name="lib/exclude-me.jar" />
  	  	 </patternset>
  
---><project name="dafontedtocache_buildcallbacks">
+--><project name="customdtocache_buildcallbacks">
     	
     <!-- 
 	    Called whenever 'ant ear' is used. this callback can be used to modify the content of the ear file
@@ -86,7 +86,7 @@
 	     ${ear.path}: 			path to ear
 	 -->
     	
-    <macrodef name="dafontedtocache_before_ear">
+    <macrodef name="customdtocache_before_ear">
         		
         <sequential>
             			

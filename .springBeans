@@ -7,8 +7,8 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
-		<config>resources/dafontedtocache-spring.xml</config>
-		<config>web/webroot/WEB-INF/dafontedtocache-web-spring.xml</config>
+		<config>resources/customdtocache-spring.xml</config>
+		<config>web/webroot/WEB-INF/customdtocache-web-spring.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

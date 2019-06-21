@@ -4,15 +4,11 @@
 -->
 <extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
+    <extension abstractclassprefix="Generated" classprefix="Customdtocache" jaloLogicFree="true" managername="CustomdtocacheManager"
+               managersuperclass="de.hybris.platform.jalo.extension.Extension" name="customdtocache" usemaven="false">
 
-    <extension abstractclassprefix="Generated" classprefix="Dafontedtocache" jaloLogicFree="true" managername="DafontedtocacheManager"
-               managersuperclass="de.hybris.platform.jalo.extension.Extension" name="dafontedtocache" usemaven="false">
-
-
-        <coremodule generated="true" manager="br.com.dafonte.jalo.DafontedtocacheManager" packageroot="br.com.dafonte"/>
-
+        <coremodule generated="true" manager="br.com.customdtocache.jalo.CustomdtocacheManager" packageroot="br.com.customdtocache"/>
 
     </extension>
-
 
 </extensioninfo>
