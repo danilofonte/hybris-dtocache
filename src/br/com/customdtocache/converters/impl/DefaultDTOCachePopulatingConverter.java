@@ -41,15 +41,15 @@ public class DefaultDTOCachePopulatingConverter {
     private Object getCacheObject(DTOCacheKeyGenerationStrategy dtoCacheKeyGenerationStrategy, String myBeanName, ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String dtoCacheKey = dtoCacheKeyGenerationStrategy.generateCacheKey(myBeanName, proceedingJoinPoint.getArgs()[0]);
 
+        Object cachedObject = null;
+
         if (dtoCacheRegion.get(dtoCacheKey) != null) {
-            return dtoCacheRegion.get(dtoCacheKey);
-
+            cachedObject = dtoCacheRegion.get(dtoCacheKey);
         } else {
-            Object target = proceedingJoinPoint.proceed();
-
-            dtoCacheRegion.put(dtoCacheKey, target);
-
-            return target;
+            cachedObject = proceedingJoinPoint.proceed();
+            dtoCacheRegion.put(dtoCacheKey, cachedObject);
         }
+
+        return cachedObject;
     }
 }
